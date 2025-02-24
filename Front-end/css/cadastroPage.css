@@ -1,0 +1,89 @@
+*{
+    font-family: sans-serif;
+}
+:root {
+    --primaryColor: #058ECF;
+}
+body{
+    min-height: 100vh;
+}
+header,footer{
+    background-color: var(--primaryColor);
+}
+header{
+    height: 8rem;
+}
+header>h1{
+    font-size: 130%;
+}
+main{
+    flex-grow: 1;
+}
+#data{
+    padding: 5% 2%;
+    gap: 2rem;
+}
+#fields,#checkboxes{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 4rem;
+    row-gap: 2rem;
+}
+.field>p{
+    font-weight: bolder;
+    color: rgb(37, 37, 37);
+    font-size: 80%;
+}
+.field>input{
+    outline: none;
+}
+#data>button{
+    background-color: #058fcf88;
+}
+#data>button:hover{
+    background-color: #058fcf;
+    transition: .8s;
+}
+#checkboxes>div>label{
+    font-size: 80%;
+    margin-left: .5rem;
+}
+#contactList{
+    box-shadow: 1px 2px 6px black;
+}
+#topContactList,.contact>div{
+    display: grid;
+    justify-items: center;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    font-size: 80%;
+}
+#contactList>div:first-child{
+    background-color: var(--primaryColor);
+    font-weight: bolder;
+    height: 1.5rem;
+}
+.contact>div{
+    height: 3rem;
+}
+.iconsField>div{
+    display: grid;
+    place-items: center;
+    aspect-ratio: 1/1;
+}
+.iconsField>div>img:hover{
+    height: 70%;
+    transition: 1s;
+}
+footer{
+    height: 6rem;
+    font-size: 70%;
+}
+footer>p>img {
+    height: 20px;
+}
+.foco>p,.foco>hr{
+    color: var(--primaryColor);
+}
+.foco>input{
+    color: #006594;
+}
