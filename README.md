@@ -7,6 +7,7 @@ Sistema de gerenciamento de contatos.
 - Git instalado na máquina
 - PHP instalado na máquina
 - XAMPP executando Apache e MySQL
+
 ![Image](https://github.com/user-attachments/assets/2fbd8663-8ac9-45a2-9f37-fccaae24c997)
 
 ## Executando a aplicação
