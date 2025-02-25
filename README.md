@@ -25,7 +25,6 @@ Dentro da pasta que foi clonada, execute o arquivo start.bat/start.sh (baseado n
 ### 3º passo: Acessar página
 
 Pelo navegador, acesse a página na qual está o [front-end](http://localhost:8001/).
-<a href="http://localhost:8001/" target="_blank">Clique aqui para acessar o front-end</a>
 > Abra o menu de inspeção (tecla F12) para deixar o projeto na resolução ideal
 
 ![screenshot_application](https://github.com/user-attachments/assets/befa84c0-6235-4bbc-8eba-5cb29dcf37d1 "screenshot_application")
