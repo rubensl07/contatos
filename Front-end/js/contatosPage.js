@@ -14,20 +14,11 @@ async function carregarContatos() {
         Swal.fire({
             title: "Erro",
             text: "Banco de dados fora do ar.",
-            icon: "error"
+            icon: "error",
+            confirmButtonColor: "#058ECF"
         });
     }
 }
-function teste(){
-    document.getElementById('nome').value = "claudio"
-    document.getElementById('email').value = "ra@c.d"
-    document.getElementById('profissao').value = "sla"
-    document.getElementById('nascimento').value="2000-10-17"
-    document.getElementById('celular').value="(11)11111-1111"
-    document.getElementById('telefone').value="(11)1111-1111"
-
-}
-teste()
 
 function criarContatoElement(info){        
     const contact = document.createElement("div")
@@ -35,6 +26,7 @@ function criarContatoElement(info){
     contact.id = `contact-${info.id}`;
 
     const hr = document.createElement('hr')
+    hr.classList.add('divisorContato')
     const row = document.createElement('div')
     row.classList.add("align-items-center")
     const nome = document.createElement("p")
@@ -103,7 +95,8 @@ async function deleteButtonPressed(id) {
         Swal.fire({
             title: "Erro",
             text: "Não foi possível excluir o contato.",
-            icon: "error"
+            icon: "error",
+            confirmButtonColor: "#058ECF"
         });
     }
 }
@@ -114,6 +107,7 @@ document.getElementById("data").addEventListener("focusin", (event) => {
         event.target.parentElement.classList.add("foco");
     }
 });
+
 
 document.getElementById("data").addEventListener("focusout", (event) => {
     if (event.target.tagName === "INPUT") {
@@ -171,21 +165,24 @@ async function pressedCadastro(){
             Swal.fire({
                 title: "Sucesso",
                 text: "Contato cadastrado",
-                icon: "success"
+                icon: "success",
+                confirmButtonColor: "#058ECF"
               });
         } else {
             console.error('Erro ao criar contato:', result);
             Swal.fire({
                 title: "Erro",
                 text: "Ocorreu um erro interno no servidor",
-                icon: "error"
+                icon: "error",
+                confirmButtonColor: "#058ECF"
               });
         }
     } else {
         Swal.fire({
             title: "Dados inválidos",
             text: validacao.mensagem||"Dados inválidos",
-            icon: "question"
+            icon: "question",
+            confirmButtonColor: "#058ECF"
           });
     }
 }
@@ -233,14 +230,16 @@ document.getElementById("modalBotaoEdicao").addEventListener("click", async func
             Swal.fire({
                 title: "Erro",
                 text: "Ocorreu um erro interno no servidor",
-                icon: "error"
+                icon: "error",
+                confirmButtonColor: "#058ECF"
             });
         }
     } else {
         Swal.fire({
             title: "Dados inválidos",
             text: validacao.mensagem || "Dados inválidos",
-            icon: "warning"
+            icon: "warning",
+            confirmButtonColor: "#058ECF"
         });
     }
 });

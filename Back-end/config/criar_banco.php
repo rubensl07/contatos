@@ -7,30 +7,25 @@ $db_pass = $config['pass'];
 $db_name = $config['dbname'];
 
 try {
-    // Conexão inicial apenas com o servidor MySQL (sem selecionar banco)
     $pdo = new PDO("mysql:host=$db_server", $db_user, $db_pass, [
         PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
     ]);
 
-    // Verifica se o banco já existe
     $stmt = $pdo->prepare("SELECT SCHEMA_NAME FROM INFORMATION_SCHEMA.SCHEMATA WHERE SCHEMA_NAME = :dbname");
     $stmt->bindParam(':dbname', $db_name, PDO::PARAM_STR);
     $stmt->execute();
 
     if ($stmt->rowCount() == 0) {
-        // Cria o banco de dados
         $pdo->exec("CREATE DATABASE `$db_name` CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci");
-        echo "✅ Banco de dados '$db_name' criado com sucesso.\n";
+        echo "Banco de dados '$db_name' criado com sucesso.\n";
     } else {
-        echo "ℹ️ Banco de dados já existe.\n";
+        echo "Banco de dados já existe.\n";
     }
 
-    // Conecta ao banco de dados recém-criado
     $pdo = new PDO("mysql:host=$db_server;dbname=$db_name", $db_user, $db_pass, [
         PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
     ]);
 
-    // Criar tabela 'contatos'
     $sql = "
         CREATE TABLE IF NOT EXISTS contatos (
             id INT AUTO_INCREMENT PRIMARY KEY,
@@ -47,9 +42,8 @@ try {
     ";
 
     $pdo->exec($sql);
-    echo "✅ Tabela 'contatos' criada/verificada com sucesso.\n";
+    echo "Tabela 'contatos' criada/verificada com sucesso.\n";
 
-    // Inserir dados iniciais (caso não existam)
     $checkStmt = $pdo->query("SELECT COUNT(*) FROM contatos");
     $rowCount = $checkStmt->fetchColumn();
 
@@ -61,12 +55,12 @@ try {
             ('Rubens Luiz', '2007-03-17', 'rubencio@email.com', 'Dev', '1111111111', '11111111111', 1, 1, 0);
         ";
         $pdo->exec($insertSql);
-        echo "✅ Dados iniciais inseridos na tabela 'contatos'.\n";
+        echo "Dados iniciais inseridos na tabela 'contatos'.\n";
     } else {
-        echo "ℹ️ Dados já existem na tabela 'contatos', inserção ignorada.\n";
+        echo "Dados já existem na tabela 'contatos', inserção ignorada.\n";
     }
 
 } catch (PDOException $e) {
-    die("❌ Erro ao conectar/criar o banco: " . $e->getMessage());
+    die("Erro ao conectar/criar o banco: " . $e->getMessage());
 }
 ?>
