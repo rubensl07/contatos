@@ -32,6 +32,7 @@ Pelo navegador, acesse a página na qual está o [front-end](http://localhost:80
 
 * Caso a página esteja demorando para abrir (tal como o exemplo abaixo), feche os arquivos CMD e siga o passo 2 novamente
 ![screenshot_error](https://github.com/user-attachments/assets/c22886e4-d9e2-4fb2-befd-11d3e0e2af8a "screenshot_error")
+![fechando_bat](https://github.com/user-attachments/assets/a38939f5-7c4e-4dec-9c1f-82e01ce417c5)
 
 ### 4º passo: Testar 
 É possível inserir novos contatos no banco de dados, visualizar, excluir ou editar contatos já existentes.
