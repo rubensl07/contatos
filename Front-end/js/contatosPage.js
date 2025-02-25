@@ -13,15 +13,23 @@ async function carregarContatos() {
         console.error("Erro ao carregar contatos:", error);
         Swal.fire({
             title: "Erro",
-            text: "Não foi possível carregar os contatos.",
+            text: "Banco de dados fora do ar.",
             icon: "error"
         });
     }
 }
+function teste(){
+    document.getElementById('nome').value = "claudio"
+    document.getElementById('email').value = "ra@c.d"
+    document.getElementById('profissao').value = "sla"
+    document.getElementById('nascimento').value="2000-10-17"
+    document.getElementById('celular').value="(11)11111-1111"
+    document.getElementById('telefone').value="(11)1111-1111"
 
+}
+teste()
 
-
-function criarContatoElement(info){    
+function criarContatoElement(info){        
     const contact = document.createElement("div")
     contact.classList.add("contact")
     contact.id = `contact-${info.id}`;
@@ -141,7 +149,7 @@ async function pressedCadastro(){
     const validacao = validarContato({nome,nascimento,email,telefone,celular,profissao});
 
     if(validacao.valido){
-        const jsonContato = {
+        let jsonContato = {
             nome,
             data_nascimento: nascimento.split('/').reverse().join('-'),
             email,
@@ -152,10 +160,14 @@ async function pressedCadastro(){
             notificacoes_email: checkNotEmail,
             notificacoes_sms: checkNotSms,
         }        
+        
         const result = await postContato(jsonContato);
+        
         if(result){
-            console.log('Resposta enviada com sucesso!');
-            criarContatoElement(jsonContato)
+            const idAdicionado=result.id
+            console.log(idAdicionado);
+            
+            criarContatoElement({...jsonContato,id:idAdicionado})
             Swal.fire({
                 title: "Sucesso",
                 text: "Contato cadastrado",
@@ -210,11 +222,12 @@ document.getElementById("modalBotaoEdicao").addEventListener("click", async func
         const result = await editarContato(contatoAtualizado);
         if (result) {
             console.log('Contato atualizado com sucesso!');
-            Swal.fire({
-                title: "Sucesso",
-                text: "Contato atualizado",
-                icon: "success"
-            });
+            // Swal.fire({
+            //     title: "Sucesso",
+            //     text: "Contato atualizado",
+            //     icon: "success"
+            // });
+            window.location.reload()
         } else {
             console.error('Erro ao atualizar contato:', result);
             Swal.fire({

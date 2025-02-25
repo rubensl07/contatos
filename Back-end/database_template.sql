@@ -27,6 +27,10 @@ SET time_zone = "+00:00";
 -- Table structure for table `contatos`
 --
 
+
+CREATE DATABASE IF NOT EXISTS database_alphacode;
+USE database_alphacode;
+
 CREATE TABLE `contatos` (
   `id` int(11) NOT NULL,
   `nome` varchar(50) NOT NULL,

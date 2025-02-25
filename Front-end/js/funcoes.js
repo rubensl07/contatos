@@ -13,13 +13,16 @@ export async function getContatos() {
 
 export async function postContato(dados) {
     try {
+        
         const endpoint = `${link}/contatos`
         const response = await fetch(endpoint, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(dados)
         })
-        const data = await response.json()        
+        console.log("r",response);
+        const data = await response.json()
+        console.log("d",data);
         return data
     } catch (error) {
         console.error("Erro:", error)
