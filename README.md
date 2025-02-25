@@ -19,7 +19,7 @@ No terminal shell, execute o seguinte comando:
 > Este comando fará com que o repositório seja transferido para um novo repositório local
 
 ### 2º passo: Executar o código
-Dentro da pasta que foi clonada, execute o arquivo start.bat/start.sh (baseado no seu sistema operacional), localizado dentro da pasta.
+Dentro da pasta que foi clonada, execute o arquivo start.bat, localizado dentro da pasta.
 > Este arquivo executará tanto o back-end (porta 8000) quanto o front-end (porta 8001)
 
 ### 3º passo: Acessar página
