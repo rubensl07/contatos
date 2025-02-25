@@ -7,7 +7,7 @@ Sistema de gerenciamento de contatos.
 - Git instalado na máquina
 - PHP instalado na máquina
 - XAMPP executando Apache e MySQL
-
+![Image](https://github.com/user-attachments/assets/2fbd8663-8ac9-45a2-9f37-fccaae24c997)
 
 ## Executando a aplicação
 ### 1º passo: Clonando o repositório
@@ -18,7 +18,7 @@ No terminal shell, execute o seguinte comando:
 > Este comando fará com que o repositório seja transferido para um novo repositório local
 
 ### 2º passo: Executar o código
-Dentro da pasta que foi clonada, execute o arquivo start.bash (baseado no seu sistema operacional), localizado dentro da pasta.
+Dentro da pasta que foi clonada, execute o arquivo start.bat/start.sh (baseado no seu sistema operacional), localizado dentro da pasta.
 > Este arquivo executará tanto o back-end (porta 8000) quanto o front-end (porta 8001)
 
 ### 3º passo: Acessar página
